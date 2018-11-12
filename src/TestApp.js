@@ -5,7 +5,7 @@ class TestApp extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      outline: true,
+      outline: false,
       outlineColor: "#cccccc",
       dieSize: 116,
       disableIndividual: false,
@@ -42,12 +42,12 @@ class TestApp extends Component {
   }
 
   rollDone(value) {
-    this.setState({ diceTotal: value, rolling: false });
+    this.setState({ diceTotal: value, rolling: false, outline: false });
   }
 
   rollAll() {
     this.reactDice.rollAll();
-    this.setState({ rolling: true });
+    this.setState({ rolling: true, outline: true });
   }
 
   render() {
